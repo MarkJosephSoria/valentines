@@ -13,11 +13,23 @@
     <div id="shine">Happy Valentine's Day 💞</div>
   </div>
 
-  <!-- Hidden YouTube Audio Player -->
-  <iframe width="0" height="0" 
-    src="https://www.youtube.com/embed/NZGHXy1IAHM?autoplay=1&loop=1&playlist=NZGHXy1IAHM" 
-    frameborder="0" allow="autoplay">
-  </iframe>
+  <!-- Background Music -->
+  <audio id="bg-music" autoplay loop>
+    <source src="1.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Play Music on Click -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const audio = document.getElementById("bg-music");
+
+      // Force play when user clicks
+      document.body.addEventListener("click", function() {
+        audio.play().catch(error => console.log("Autoplay blocked:", error));
+      }, { once: true });
+    });
+  </script>
 
   <!-- Image Gallery -->
   <div class="gallery">
